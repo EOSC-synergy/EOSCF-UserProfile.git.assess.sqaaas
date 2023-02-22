@@ -1,0 +1,62 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.8
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/athenarc/EOSCF-UserProfile:
+      branch: master
+      repo: https://github.com/athenarc/EOSCF-UserProfile.git
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/athenarc/EOSCF-UserProfile git:
+        commands:
+        - /usr/bin/env sh .sqa/script.zippy-magnolia-abyssinian.sh
+        container: qc.acc_whiny-goldenrod-caracal
+  QC.Doc:
+    repos:
+      github.com/athenarc/EOSCF-UserProfile find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.gummy-rose-akbash.sh
+        container: qc.doc_lanky-cerulean-oriole
+      github.com/athenarc/EOSCF-UserProfile git:
+        commands:
+        - /usr/bin/env sh .sqa/script.seedy-rust-jaguar.sh
+        container: qc.doc_muzzy-scarlet-earwig
+      github.com/athenarc/EOSCF-UserProfile markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.geeky-wheat-scorpion.sh
+        container: qc.doc_flabby-lavender-akita
+  QC.Lic:
+    repos:
+      github.com/athenarc/EOSCF-UserProfile licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.geeky-pumpkin-bison.sh
+        container: qc.lic_messy-olivine-zebu
+  QC.Sec:
+    repos:
+      github.com/athenarc/EOSCF-UserProfile bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.sleazy-brass-earwig.sh
+        container: qc.sec_crabby-scarlet-liger
+  QC.Sty:
+    repos:
+      github.com/athenarc/EOSCF-UserProfile flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.greasy-ruby-birman.sh
+        container: qc.sty_surly-cardinal-cheetah
+      github.com/athenarc/EOSCF-UserProfile hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.pokey-plum-coyote.sh
+        container: qc.sty_lousy-blue-sloth
+  QC.Ver:
+    repos:
+      github.com/athenarc/EOSCF-UserProfile get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.paltry-cyan-zonkey.sh
+        container: qc.ver_fuzzy-teal-dachshund
+timeout: 5400
