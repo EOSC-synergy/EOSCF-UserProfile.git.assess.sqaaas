@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.8
+      branch: release/1.7.9
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/athenarc/EOSCF-UserProfile:
       branch: master
@@ -15,48 +15,48 @@ sqa_criteria:
     repos:
       github.com/athenarc/EOSCF-UserProfile git:
         commands:
-        - /usr/bin/env sh .sqa/script.zippy-magnolia-abyssinian.sh
-        container: qc.acc_whiny-goldenrod-caracal
+        - /usr/bin/env sh .sqa/script.homely-chocolate-numbat.sh
+        container: qc.acc_tacky-zucchini-kangaroo
   QC.Doc:
     repos:
       github.com/athenarc/EOSCF-UserProfile find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.gummy-rose-akbash.sh
-        container: qc.doc_lanky-cerulean-oriole
+        - /usr/bin/env sh .sqa/script.queasy-gold-pinscher.sh
+        container: qc.doc_skanky-emerald-booby
       github.com/athenarc/EOSCF-UserProfile git:
         commands:
-        - /usr/bin/env sh .sqa/script.seedy-rust-jaguar.sh
-        container: qc.doc_muzzy-scarlet-earwig
+        - /usr/bin/env sh .sqa/script.gamy-burgundy-fish.sh
+        container: qc.doc_scummy-pear-audemer
       github.com/athenarc/EOSCF-UserProfile markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.geeky-wheat-scorpion.sh
-        container: qc.doc_flabby-lavender-akita
+        - /usr/bin/env sh .sqa/script.flimsy-mustard-turkey.sh
+        container: qc.doc_geeky-pink-bee
   QC.Lic:
     repos:
       github.com/athenarc/EOSCF-UserProfile licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.geeky-pumpkin-bison.sh
-        container: qc.lic_messy-olivine-zebu
+        - /usr/bin/env sh .sqa/script.gimpy-orange-vole.sh
+        container: qc.lic_randy-mauve-cockroach
   QC.Sec:
     repos:
       github.com/athenarc/EOSCF-UserProfile bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.sleazy-brass-earwig.sh
-        container: qc.sec_crabby-scarlet-liger
+        - /usr/bin/env sh .sqa/script.whiny-cornflower-wolf.sh
+        container: qc.sec_ugly-ruby-jackal
   QC.Sty:
     repos:
       github.com/athenarc/EOSCF-UserProfile flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-ruby-birman.sh
-        container: qc.sty_surly-cardinal-cheetah
+        - /usr/bin/env sh .sqa/script.thirsty-rust-capuchin.sh
+        container: qc.sty_lanky-blue-stingray
       github.com/athenarc/EOSCF-UserProfile hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.pokey-plum-coyote.sh
-        container: qc.sty_lousy-blue-sloth
+        - /usr/bin/env sh .sqa/script.tasty-cream-tortoise.sh
+        container: qc.sty_boozy-orchid-mist
   QC.Ver:
     repos:
       github.com/athenarc/EOSCF-UserProfile get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.paltry-cyan-zonkey.sh
-        container: qc.ver_fuzzy-teal-dachshund
+        - /usr/bin/env sh .sqa/script.gummy-lime-turtle.sh
+        container: qc.ver_ready-amethyst-chimpanzee
 timeout: 5400
